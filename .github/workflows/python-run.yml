@@ -6,12 +6,12 @@ jobs:
   demo1:
     runs-on: ubuntu-latest
     container:
-      image: python
+      image: openjdk:24-slim-bullseye
     steps:
     - uses: actions/checkout@v4
-    - name: Install dependencies
+    - name: compile
       run: |
-        pip install -r requirements.txt
+        javac Hello.java
     - name: run code
-      run: python hello.py
+      run: java Hello
     
